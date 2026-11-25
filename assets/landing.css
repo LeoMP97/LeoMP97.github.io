@@ -1,0 +1,72 @@
+/* Home page, section pages (Teaching, Research, Projects, CV) and templates. Needs theme.css first. */
+.page { max-width: 960px; margin: 0 auto; padding: 36px 24px 48px; }
+.page h1 { font-size: 2.3rem; line-height: 1.15; margin: .1em 0 .4em; }
+.page .lead { font-size: 1.2rem; color: var(--muted); max-width: 40em; margin: 0 0 1.6em; }
+.page h2 { font-size: 1.45rem; margin: 1.8em 0 .5em; }
+.eyebrow { margin: 0; color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .09em; font-weight: 700; }
+
+.card-grid { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.card { position: relative; display: flex; flex-direction: column; gap: 6px; padding: 20px 22px 18px; border: 1px solid var(--line); border-top: 5px solid var(--accent); border-radius: var(--radius); background: var(--wash); box-shadow: 0 1px 3px var(--shadow); }
+.card:hover { background: var(--accent-2); }
+.card .code { margin: 0; font-size: .85rem; font-weight: 700; letter-spacing: .08em; color: var(--muted); }
+.page .card h3 { margin: 0; font-size: 1.4rem; line-height: 1.25; }
+.page .card h3 a { color: var(--ink); text-decoration: none; }
+.page .card h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; }
+.page .card h3 a::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius); }
+.page .card h3 a:focus-visible { outline: none; }
+.page .card h3 a:focus-visible::after { outline: 3px solid var(--focus); outline-offset: 3px; }
+.card p { margin: 0; }
+.card .desc { color: var(--ink); }
+.card .meta { margin-top: auto; padding-top: 10px; color: var(--muted); font-size: .92rem; }
+.card .go { font-weight: 600; color: var(--link); margin-top: 6px; }
+.card.soon { border-top-color: var(--ctl-border); background: var(--paper); }
+.badge { display: inline-block; padding: 1px 9px; border: 1.5px solid var(--ctl-border); border-radius: 999px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; color: var(--muted); }
+
+.site-footer { max-width: 960px; margin: 0 auto; padding: 16px 24px 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+.site-footer p { margin: .3em 0; }
+.steps li { margin: .5em 0; }
+@media (max-width: 600px) { .page { padding: 24px 16px 40px; } .site-footer { padding: 16px 16px 32px; } .page h1 { font-size: 1.9rem; } }
+
+/* ------------------------------------------------------------- home page and section pages */
+.hero { padding: 10px 0 6px; }
+.hero h1 { font-size: 3rem; margin-bottom: .25em; }
+.hero .lead { margin-bottom: 1.1em; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 8px; }
+.actions .btn { min-height: 44px; padding: 8px 20px; font-size: 1rem; font-weight: 600; }
+.page h2.section { border-bottom: 1px solid var(--line); padding-bottom: .25em; }
+.page h3 { font-size: 1.1rem; margin: 0 0 .15em; }
+.prose { max-width: 42em; }
+
+/* a dated list: CV lines, publications, talks, projects */
+.entries { list-style: none; margin: 0; padding: 0; }
+.entry { display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 2px 22px; padding: 12px 0; border-top: 1px solid var(--line); break-inside: avoid; }
+.entry:first-child { border-top: 0; }
+.entry .when { margin: 0; color: var(--muted); font-weight: 600; font-size: .95rem; }
+.entry p { margin: .15em 0; }
+.entry > div:only-child { grid-column: 1 / -1; }      /* entries without a date use the full width */
+.entry ul { margin: .3em 0 0; padding-left: 1.2em; }
+.entry li { margin: .15em 0; }
+.entry .what { color: var(--muted); }
+
+.contact, .skills { margin: 0; display: grid; grid-template-columns: 9.5em minmax(0, 1fr); gap: 6px 22px; }
+.contact dt, .skills dt { color: var(--muted); font-weight: 600; }
+.contact dd, .skills dd { margin: 0; }
+.updated { color: var(--muted); font-size: .92rem; margin: 0 0 1em; }
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.3rem; }
+  .entry, .contact, .skills { grid-template-columns: minmax(0, 1fr); }
+  .contact dt, .skills dt { margin-top: .5em; }
+}
+@media print {
+  .actions, .site-footer, .no-print { display: none !important; }
+  body { font-size: 10.5pt; line-height: 1.45; }
+  .page { padding: 0; max-width: none; }
+  .page h1 { font-size: 22pt; }
+  .page h2.section { font-size: 14pt; }
+  .page h2.section { margin-top: 1.1em; break-after: avoid; }
+  .page h3 { break-after: avoid; }
+  a { color: inherit; text-decoration: none; }
+  .page a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .85em; }
+  .entry { padding: 6px 0; grid-template-columns: 11.5em minmax(0, 1fr); }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class title &middot; Leonardo Pierre</title>
+<meta name="description" content="Notes for CLASS CODE.">
+<meta name="color-scheme" content="light dark">
+<!-- Shared theme (dark mode) lives in ../assets/. Keep theme.js in the head so the page never flashes the wrong theme. -->
+<script src="../assets/theme.js"></script>
+<link rel="stylesheet" href="../assets/theme.css">
+<link rel="stylesheet" href="../assets/landing.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header class="topbar site">
+  <!-- nav:start -->
+  <a class="brand" href="../index.html">Leonardo Pierre</a>
+  <nav class="sitenav" aria-label="Main">
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../teaching/index.html">Teaching</a></li>
+      <li><a href="../research/index.html">Research</a></li>
+      <li><a href="../projects/index.html">Projects</a></li>
+      <li><a href="../cv/index.html">CV</a></li>
+    </ul>
+  </nav>
+  <!-- nav:end -->
+  <span class="spacer"></span>
+  <button type="button" class="theme-btn" id="theme-toggle" role="switch" aria-checked="false" hidden>
+    <svg class="moon" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <span class="label">Dark mode</span>
+    <span class="switch" aria-hidden="true"></span>
+  </button>
+</header>
+<main id="main" class="page">
+  <p class="eyebrow"><a href="../teaching/index.html">&larr; All classes</a></p>
+  <h1>Class title</h1>
+  <p class="lead">One or two sentences about what this class covers.</p>
+
+  <!--
+    HOW TO USE THIS TEMPLATE
+    1. Copy the whole class-template folder and rename the copy to the class code in lower case, for example "mat041".
+    2. Replace "Class title", "CLASS CODE" and this text, then add your pages (chapters, handouts, links) as plain HTML.
+       Every page in the class folder should include the same <head> links as above (theme.js, theme.css) so dark mode works.
+    3. Open teaching/index.html and copy the MAT040 card to make a card for the new class.
+       Point its link at "../mat041/index.html".
+    Accessibility checklist for new pages: one <h1> per page, headings in order, a descriptive alt="" on every
+    meaningful image (alt="" only for purely decorative ones), a visible label for every form field,
+    and link text that makes sense out of context (not "click here").
+  -->
+
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#">Chapter 1</a></li>
+    <li><a href="#">Chapter 2</a></li>
+  </ul>
+</main>
+<footer class="site-footer">
+  <p>Notes and examples by Leonardo Pierre.</p>
+</footer>
+</body>
+</html>
